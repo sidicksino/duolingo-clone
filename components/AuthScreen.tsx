@@ -235,7 +235,7 @@ export function AuthScreen({ mode }: AuthScreenProps) {
             className="flex-1 justify-end px-5 pb-5"
             style={{ backgroundColor: "rgba(13, 19, 43, 0.4)" }}
           >
-            <Pressable className="rounded-7 bg-neutral-background px-6 pt-6.5 pb-7">
+            <Pressable className="rounded-3xl bg-background px-6 py-7">
               <View className="items-center">
                 <View className="auth__modal-icon">
                   <Ionicons
