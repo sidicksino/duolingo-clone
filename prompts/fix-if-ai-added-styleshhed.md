@@ -1,0 +1,1 @@
+The agents.md file only specifies to use the stylesheet for components where Tailwind CSS or native Wint class names don't work natively, which is the case for the safe area of view, but not for text, images, and all of the other components. For those still use the class name native wind syntax. Fix the onboarding screen to do it properly.
