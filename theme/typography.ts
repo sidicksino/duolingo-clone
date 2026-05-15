@@ -1,0 +1,78 @@
+import { fontFamilies } from "./fonts";
+
+export const typography = {
+  h1: {
+    label: "Page / Screen Title",
+    className: "ds-text--h1",
+    fontFamily: fontFamilies.bold,
+    fontSize: 32,
+    lineHeight: 38.4,
+    lineHeightRatio: 1.2,
+    fontWeight: "700",
+  },
+  h2: {
+    label: "Section Title",
+    className: "ds-text--h2",
+    fontFamily: fontFamilies.semibold,
+    fontSize: 24,
+    lineHeight: 31.2,
+    lineHeightRatio: 1.3,
+    fontWeight: "600",
+  },
+  h3: {
+    label: "Card / Module Title",
+    className: "ds-text--h3",
+    fontFamily: fontFamilies.semibold,
+    fontSize: 20,
+    lineHeight: 26,
+    lineHeightRatio: 1.3,
+    fontWeight: "600",
+  },
+  h4: {
+    label: "Subheading",
+    className: "ds-text--h4",
+    fontFamily: fontFamilies.medium,
+    fontSize: 16,
+    lineHeight: 22.4,
+    lineHeightRatio: 1.4,
+    fontWeight: "500",
+  },
+  bodyLarge: {
+    label: "Important content",
+    className: "ds-text--body-large",
+    fontFamily: fontFamilies.regular,
+    fontSize: 16,
+    lineHeight: 25.6,
+    lineHeightRatio: 1.6,
+    fontWeight: "400",
+  },
+  bodyMedium: {
+    label: "Body text",
+    className: "ds-text--body-medium",
+    fontFamily: fontFamilies.regular,
+    fontSize: 14,
+    lineHeight: 22.4,
+    lineHeightRatio: 1.6,
+    fontWeight: "400",
+  },
+  bodySmall: {
+    label: "Supporting text",
+    className: "ds-text--body-small",
+    fontFamily: fontFamilies.regular,
+    fontSize: 13,
+    lineHeight: 20.8,
+    lineHeightRatio: 1.6,
+    fontWeight: "400",
+  },
+  caption: {
+    label: "Labels, meta text",
+    className: "ds-text--caption",
+    fontFamily: fontFamilies.regular,
+    fontSize: 11,
+    lineHeight: 15.4,
+    lineHeightRatio: 1.4,
+    fontWeight: "400",
+  },
+} as const;
+
+export type TypographyToken = keyof typeof typography;
