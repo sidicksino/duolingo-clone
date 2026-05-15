@@ -425,9 +425,7 @@
     font-size: 24px;
     line-height: 34px;
     color: var(--color-background);
-    text-shadow-color: rgba(13, 19, 43, 0.2);
-    text-shadow-offset: 0 2px;
-    text-shadow-radius: 1px;
+    text-shadow: 0 2px 1px rgba(13, 19, 43, 0.2);
   }
 
   .auth__divider-row {
