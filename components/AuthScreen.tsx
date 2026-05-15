@@ -70,7 +70,7 @@ export function AuthScreen({ mode }: AuthScreenProps) {
   const inputRef = useRef<TextInput>(null);
   const [isVerificationVisible, setVerificationVisible] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
-  const [email, setEmail] = useState<string>(authCopy[mode].email);
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [passwordVisible, setPasswordVisible] = useState(false);
   const copy = authCopy[mode];
