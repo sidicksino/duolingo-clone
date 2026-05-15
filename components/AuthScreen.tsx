@@ -71,13 +71,7 @@ export function AuthScreen({ mode }: AuthScreenProps) {
   const inputRef = useRef<TextInput>(null);
   const [isVerificationVisible, setVerificationVisible] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
-<<<<<<< HEAD
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [passwordVisible, setPasswordVisible] = useState(false);
-=======
   const [email, setEmail] = useState<string>(authCopy[mode].email);
->>>>>>> 783b7a9 (Add Expo Router Data Loaders documentation and upgrade guidelines)
   const copy = authCopy[mode];
 
   useEffect(() => {
@@ -149,72 +143,6 @@ export function AuthScreen({ mode }: AuthScreenProps) {
                   <Text className="auth__subtitle">{copy.subtitle}</Text>
                 </View>
 
-<<<<<<< HEAD
-        <View className="auth__mascot-wrap">
-          <Text className="auth__sparkle auth__sparkle--orange-left">✦</Text>
-          <Text className="auth__sparkle auth__sparkle--blue">✦</Text>
-          <Text className="auth__sparkle auth__sparkle--yellow">✦</Text>
-          <Image
-            accessibilityLabel={copy.accessibilityLabel}
-            className="auth__mascot"
-            resizeMode="contain"
-            source={images.mascotAuth}
-          />
-        </View>
-
-        <View className="auth__form">
-          <View className="auth__input-shell">
-            <Text className="auth__input-label">Email</Text>
-            <TextInput
-              autoCapitalize="none"
-              keyboardType="email-address"
-              onChangeText={setEmail}
-              placeholder="Email"
-              placeholderTextColor={colors.neutral.textSecondary}
-              style={{
-                color: colors.neutral.textPrimary,
-                fontFamily: "Poppins-Regular",
-                fontSize: 20,
-                lineHeight: 28,
-                margin: 0,
-                padding: 0,
-              }}
-              value={email}
-            />
-          </View>
-
-          <View className="auth__input-shell auth__input-shell--password">
-            <Text className="auth__input-label">Password</Text>
-            <View className="auth__password-row">
-              <TextInput
-                placeholder="Password"
-                placeholderTextColor={colors.neutral.textSecondary}
-                onChangeText={setPassword}
-                secureTextEntry={!passwordVisible}
-                style={{
-                  color: colors.neutral.textPrimary,
-                  fontFamily: "Poppins-Regular",
-                  fontSize: 20,
-                  lineHeight: 28,
-                  margin: 0,
-                  padding: 0,
-                  flex: 1,
-                }}
-                value={password}
-              />
-              <Pressable
-                onPress={() => setPasswordVisible(!passwordVisible)}
-                hitSlop={12}
-              >
-                <Ionicons
-                  color="#747D9B"
-                  name={passwordVisible ? "eye-outline" : "eye-off-outline"}
-                  size={31}
-                />
-              </Pressable>
-            </View>
-          </View>
-=======
                 <View className="auth__mascot-wrap">
                   <Text className="auth__sparkle auth__sparkle--orange-left">
                     ✦
@@ -299,7 +227,6 @@ export function AuthScreen({ mode }: AuthScreenProps) {
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
->>>>>>> 783b7a9 (Add Expo Router Data Loaders documentation and upgrade guidelines)
 
       <Modal
         animationType="fade"
@@ -319,14 +246,10 @@ export function AuthScreen({ mode }: AuthScreenProps) {
             }}
             style={styles.modalBackdrop}
           >
-<<<<<<< HEAD
-            <Pressable className="rounded-3xl bg-background px-6 py-7">
-=======
             <Pressable
               className="auth__modal-card"
               onPress={(e) => e.stopPropagation()}
             >
->>>>>>> 783b7a9 (Add Expo Router Data Loaders documentation and upgrade guidelines)
               <View className="items-center">
                 <View className="auth__modal-icon">
                   <Ionicons

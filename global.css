@@ -435,10 +435,7 @@
     font-size: 19px;
     line-height: 27px;
     color: var(--color-background);
-<<<<<<< HEAD
     text-shadow: 0 2px 1px rgba(13, 19, 43, 0.2);
-=======
->>>>>>> 783b7a9 (Add Expo Router Data Loaders documentation and upgrade guidelines)
   }
 
   .auth__divider-row {
