@@ -65,7 +65,7 @@ export default function OnboardingScreen() {
           />
         </View>
 
-        <Link asChild href="/">
+        <Link asChild href="/sign-up">
           <Pressable className="onboarding__button">
             <Text className="onboarding__button-label">Get Started</Text>
             <View className="onboarding__button-icon">

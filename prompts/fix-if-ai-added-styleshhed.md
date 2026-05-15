@@ -1,6 +1,15 @@
-The agents.md file specifies using a stylesheet only for components where Tailwind/native NativeWind class names do not work (for example, SafeAreaView). For text, images, and other components, use NativeWind `className` syntax. Fix the onboarding screen accordingly.
+The AGENTS.md file specifies: use NativeWind `className` for Text, Image, View, and other standard components. Only use StyleSheet imports or inline styles for React Native-specific components where NativeWind class names don't work (for example, SafeAreaView from react-native-safe-area-context). Fix the onboarding screen accordingly.
 
-## VS code warning:
+## VS Code warning:
 
-VS Code warnings (yellow highlights) or errors.
-Check and fix errors
+Open the VS Code Problems panel (Ctrl+Shift+M / Cmd+Shift+M) or review yellow/red highlights in the editor. For each warning or error:
+
+1. Read the message to understand the issue
+2. Run the project's linter/formatter: `npm run lint`
+3. Fix the code or configuration as suggested
+4. Re-run TypeScript type checking, ESLint, and build to confirm resolution:
+   - `npm run typecheck`
+   - `npm run lint`
+   - `npm run build` (or `npx expo start`)
+
+Ensure all warnings/errors are resolved before committing code.

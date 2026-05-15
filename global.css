@@ -25,7 +25,16 @@
 
   --color-text-primary: #0d132b;
   --color-text-secondary: #6b7280;
+  --color-text-strong: #050a24;
+  --color-text-muted: #747d9b;
+  --color-text-hint: #060a1f;
+  --color-subtle: #6f7897;
   --color-border: #e5e7eb;
+  --color-divider: #eef0f6;
+  --color-bg-soft: #f5f4ff;
+  --color-bubble-hello-bg: #eff8ff;
+  --color-bubble-nihao-bg: #fff5ef;
+  --color-feedback-error: #ff4d3d;
   --color-surface: #f6f7fb;
   --color-background: #ffffff;
 
@@ -202,21 +211,21 @@
   .onboarding__bubble--hello {
     top: 16px;
     left: 4px;
-    background-color: #eff8ff;
+    background-color: var(--color-bubble-hello-bg);
     transform: rotate(-7deg);
   }
 
   .onboarding__bubble--hola {
     top: 0;
     right: 4px;
-    background-color: #f5f4ff;
+    background-color: var(--color-bg-soft);
     transform: rotate(11deg);
   }
 
   .onboarding__bubble--ni-hao {
     top: 116px;
     right: 0;
-    background-color: #fff5ef;
+    background-color: var(--color-bubble-nihao-bg);
     transform: rotate(10deg);
   }
 
@@ -229,7 +238,7 @@
   .onboarding__bubble-text--hello {
     font-size: 24px;
     line-height: 32px;
-    color: #060a1f;
+    color: var(--color-text-hint);
   }
 
   .onboarding__bubble-text--hola {
@@ -237,7 +246,7 @@
   }
 
   .onboarding__bubble-text--ni-hao {
-    color: #ff4d3d;
+    color: var(--color-feedback-error);
   }
 
   .onboarding__bubble-tail {
@@ -251,17 +260,17 @@
 
   .onboarding__bubble-tail--hello {
     right: 24px;
-    background-color: #eff8ff;
+    background-color: var(--color-bubble-hello-bg);
   }
 
   .onboarding__bubble-tail--hola {
     left: 28px;
-    background-color: #f5f4ff;
+    background-color: var(--color-bg-soft);
   }
 
   .onboarding__bubble-tail--ni-hao {
     left: 28px;
-    background-color: #fff5ef;
+    background-color: var(--color-bubble-nihao-bg);
   }
 
   .onboarding__mascot {
@@ -292,5 +301,228 @@
   .onboarding__button-icon {
     position: absolute;
     right: 28px;
+  }
+
+  .auth__screen {
+    flex: 1;
+    padding-left: 43px;
+    padding-right: 45px;
+    padding-top: 43px;
+    padding-bottom: 39px;
+  }
+
+  .auth__back-button {
+    width: 40px;
+    height: 42px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .auth__header {
+    margin-top: 49px;
+  }
+
+  .auth__title {
+    font-family: var(--font-poppins-semibold);
+    font-size: 38px;
+    line-height: 48px;
+    color: var(--color-text-strong);
+  }
+
+  .auth__subtitle {
+    margin-top: 19px;
+    font-family: var(--font-poppins-regular);
+    font-size: 22px;
+    line-height: 31px;
+    color: var(--color-subtle);
+  }
+
+  .auth__mascot-wrap {
+    position: relative;
+    height: 187px;
+    margin-top: 4px;
+    overflow: hidden;
+  }
+
+  .auth__mascot {
+    position: absolute;
+    bottom: -67px;
+    align-self: center;
+    width: 281px;
+    height: 281px;
+  }
+
+  .auth__sparkle {
+    position: absolute;
+    z-index: 2;
+    font-family: var(--font-poppins-bold);
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .auth__sparkle--orange-left {
+    top: 64px;
+    left: 99px;
+    color: #ff8a00;
+  }
+
+  .auth__sparkle--blue {
+    top: 71px;
+    right: 82px;
+    color: #4d8bff;
+  }
+
+  .auth__sparkle--yellow {
+    top: 116px;
+    right: 101px;
+    color: #ffc800;
+  }
+
+  .auth__form {
+    margin-top: -2px;
+  }
+
+  .auth__input-shell {
+    min-height: 112px;
+    justify-content: center;
+    border-width: 1.5px;
+    border-color: #e8eaf2;
+    border-radius: 20px;
+    background-color: var(--color-background);
+    padding-left: 24px;
+    padding-right: 19px;
+  }
+
+  .auth__input-shell--password {
+    margin-top: 19px;
+  }
+
+  .auth__input-label {
+    margin-bottom: 12px;
+    font-family: var(--font-poppins-medium);
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--color-text-muted);
+  }
+
+  .auth__password-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .auth__primary-button {
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+    margin-top: 27px;
+    border-radius: 18px;
+    background-color: var(--color-SinoLingo-deep-purple);
+  }
+
+  .auth__primary-label {
+    font-family: var(--font-poppins-semibold);
+    font-size: 24px;
+    line-height: 34px;
+    color: var(--color-background);
+    text-shadow-color: rgba(13, 19, 43, 0.2);
+    text-shadow-offset: 0 2px;
+    text-shadow-radius: 1px;
+  }
+
+  .auth__divider-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    margin-top: 38px;
+  }
+
+  .auth__divider-line {
+    flex: 1;
+    height: 2px;
+    background-color: var(--color-divider);
+  }
+
+  .auth__divider-text {
+    font-family: var(--font-poppins-regular);
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--color-text-muted);
+  }
+
+  .auth__social-list {
+    gap: 15px;
+    margin-top: 23px;
+  }
+
+  .auth__social-button {
+    position: relative;
+    height: 78px;
+    align-items: center;
+    justify-content: center;
+    border-width: 1.5px;
+    border-color: var(--color-divider);
+    border-radius: 20px;
+    background-color: var(--color-background);
+  }
+
+  .auth__social-icon {
+    position: absolute;
+    left: 54px;
+  }
+
+  .auth__social-label {
+    font-family: var(--font-poppins-regular);
+    font-size: 21px;
+    line-height: 30px;
+    color: var(--color-text-strong);
+  }
+
+  .auth__footer {
+    flex: 1;
+    min-height: 64px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .auth__footer-text {
+    font-family: var(--font-poppins-regular);
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--color-text-muted);
+  }
+
+  .auth__footer-action {
+    font-family: var(--font-poppins-semibold);
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--color-SinoLingo-deep-purple);
+  }
+
+  .auth__modal-icon {
+    width: 58px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background-color: var(--color-bg-soft);
+  }
+
+  .auth__modal-title {
+    margin-top: 16px;
+    font-family: var(--font-poppins-semibold);
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--color-text-strong);
+  }
+
+  .auth__modal-body {
+    margin-top: 8px;
+    font-family: var(--font-poppins-regular);
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    color: var(--color-text-muted);
   }
 }
