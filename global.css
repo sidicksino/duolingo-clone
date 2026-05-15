@@ -16,6 +16,7 @@
   --color-SinoLingo-deep-purple: #5b3bf6;
   --color-SinoLingo-blue: #4d8bff;
   --color-SinoLingo-green: #21c16b;
+  --color-sparkle-orange: #ff9800;
 
   --color-success: #21c16b;
   --color-warning: #ffc800;
@@ -30,6 +31,7 @@
   --color-text-hint: #060a1f;
   --color-subtle: #6f7897;
   --color-border: #e5e7eb;
+  --color-input-border: #e6e8f0;
   --color-divider: #eef0f6;
   --color-bg-soft: #f5f4ff;
   --color-bubble-hello-bg: #eff8ff;
@@ -305,77 +307,85 @@
 
   .auth__screen {
     flex: 1;
-    padding-left: 43px;
-    padding-right: 45px;
-    padding-top: 43px;
-    padding-bottom: 39px;
+    background-color: var(--color-background);
+  }
+
+  .auth__shell {
+    width: 100%;
+    max-width: 460px;
+    flex: 1;
+    align-self: center;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 10px;
+    padding-bottom: 20px;
   }
 
   .auth__back-button {
     width: 40px;
-    height: 42px;
+    height: 40px;
     align-items: flex-start;
     justify-content: center;
   }
 
   .auth__header {
-    margin-top: 49px;
+    margin-top: 34px;
   }
 
   .auth__title {
     font-family: var(--font-poppins-semibold);
-    font-size: 38px;
-    line-height: 48px;
-    color: var(--color-text-strong);
+    font-size: 34px;
+    line-height: 42px;
+    color: var(--color-text-primary);
   }
 
   .auth__subtitle {
-    margin-top: 19px;
+    margin-top: 10px;
     font-family: var(--font-poppins-regular);
-    font-size: 22px;
-    line-height: 31px;
-    color: var(--color-subtle);
+    font-size: 17px;
+    line-height: 25px;
+    color: var(--color-text-muted);
   }
 
   .auth__mascot-wrap {
     position: relative;
-    height: 187px;
-    margin-top: 4px;
+    height: 156px;
+    margin-top: 8px;
     overflow: hidden;
   }
 
   .auth__mascot {
     position: absolute;
-    bottom: -67px;
+    bottom: -34px;
     align-self: center;
-    width: 281px;
-    height: 281px;
+    width: 248px;
+    height: 248px;
   }
 
   .auth__sparkle {
     position: absolute;
     z-index: 2;
     font-family: var(--font-poppins-bold);
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 28px;
   }
 
   .auth__sparkle--orange-left {
-    top: 64px;
-    left: 99px;
-    color: #ff8a00;
+    top: 54px;
+    left: 72px;
+    color: var(--color-sparkle-orange);
   }
 
   .auth__sparkle--blue {
-    top: 71px;
-    right: 82px;
-    color: #4d8bff;
+    top: 60px;
+    right: 78px;
+    color: var(--color-SinoLingo-blue);
   }
 
   .auth__sparkle--yellow {
-    top: 116px;
-    right: 101px;
-    color: #ffc800;
+    top: 98px;
+    right: 88px;
+    color: var(--color-warning);
   }
 
   .auth__form {
@@ -383,25 +393,25 @@
   }
 
   .auth__input-shell {
-    min-height: 112px;
+    min-height: 84px;
     justify-content: center;
-    border-width: 1.5px;
-    border-color: #e8eaf2;
+    border-width: 1px;
+    border-color: var(--color-input-border, #e6e8f0);
     border-radius: 20px;
     background-color: var(--color-background);
-    padding-left: 24px;
-    padding-right: 19px;
+    padding-left: 20px;
+    padding-right: 18px;
   }
 
   .auth__input-shell--password {
-    margin-top: 19px;
+    margin-top: 16px;
   }
 
   .auth__input-label {
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     font-family: var(--font-poppins-medium);
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 20px;
     color: var(--color-text-muted);
   }
 
@@ -414,87 +424,89 @@
   .auth__primary-button {
     align-items: center;
     justify-content: center;
-    height: 82px;
-    margin-top: 27px;
+    height: 60px;
+    margin-top: 18px;
     border-radius: 18px;
     background-color: var(--color-SinoLingo-deep-purple);
   }
 
   .auth__primary-label {
     font-family: var(--font-poppins-semibold);
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 19px;
+    line-height: 27px;
     color: var(--color-background);
+<<<<<<< HEAD
     text-shadow: 0 2px 1px rgba(13, 19, 43, 0.2);
+=======
+>>>>>>> 783b7a9 (Add Expo Router Data Loaders documentation and upgrade guidelines)
   }
 
   .auth__divider-row {
     flex-direction: row;
     align-items: center;
-    gap: 24px;
-    margin-top: 38px;
+    gap: 14px;
+    margin-top: 26px;
   }
 
   .auth__divider-line {
     flex: 1;
-    height: 2px;
+    height: 1px;
     background-color: var(--color-divider);
   }
 
   .auth__divider-text {
     font-family: var(--font-poppins-regular);
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 14px;
+    line-height: 20px;
     color: var(--color-text-muted);
   }
 
   .auth__social-list {
-    gap: 15px;
-    margin-top: 23px;
+    gap: 12px;
+    margin-top: 18px;
   }
 
   .auth__social-button {
     position: relative;
-    height: 78px;
+    height: 56px;
     align-items: center;
     justify-content: center;
-    border-width: 1.5px;
-    border-color: var(--color-divider);
-    border-radius: 20px;
+    border-width: 1px;
+    border-color: var(--color-input-border, #e6e8f0);
+    border-radius: 18px;
     background-color: var(--color-background);
   }
 
   .auth__social-icon {
     position: absolute;
-    left: 54px;
+    left: 26px;
   }
 
   .auth__social-label {
     font-family: var(--font-poppins-regular);
-    font-size: 21px;
-    line-height: 30px;
-    color: var(--color-text-strong);
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-text-primary);
   }
 
   .auth__footer {
-    flex: 1;
-    min-height: 64px;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+    padding-top: 18px;
   }
 
   .auth__footer-text {
     font-family: var(--font-poppins-regular);
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 15px;
+    line-height: 22px;
     color: var(--color-text-muted);
   }
 
   .auth__footer-action {
     font-family: var(--font-poppins-semibold);
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 15px;
+    line-height: 22px;
     color: var(--color-SinoLingo-deep-purple);
   }
 
@@ -507,11 +519,21 @@
     background-color: var(--color-bg-soft);
   }
 
+  .auth__modal-card {
+    width: 100%;
+    border-radius: 28px;
+    background-color: var(--color-background);
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+    padding-bottom: 28px;
+  }
+
   .auth__modal-title {
     margin-top: 16px;
     font-family: var(--font-poppins-semibold);
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 30px;
     color: var(--color-text-strong);
   }
 
@@ -519,7 +541,7 @@
     margin-top: 8px;
     font-family: var(--font-poppins-regular);
     font-size: 15px;
-    line-height: 24px;
+    line-height: 23px;
     text-align: center;
     color: var(--color-text-muted);
   }

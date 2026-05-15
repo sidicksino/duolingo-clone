@@ -10,6 +10,6 @@ Open the VS Code Problems panel (Ctrl+Shift+M / Cmd+Shift+M) or review yellow/re
 4. Re-run TypeScript type checking, ESLint, and build to confirm resolution:
    - `npm run typecheck`
    - `npm run lint`
-   - `npm run build` (or `npx expo start`)
+   - `npx expo start`
 
 Ensure all warnings/errors are resolved before committing code.
