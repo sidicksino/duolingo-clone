@@ -2,6 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Link, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import {
+  Alert,
   Image,
   Keyboard,
   KeyboardAvoidingView,
@@ -18,6 +19,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { images } from "@/constants/images";
 import { colors } from "@/theme";
+import { useSignIn, useSignUp } from "@clerk/expo/legacy";
 
 type AuthMode = "sign-up" | "sign-in";
 
@@ -47,7 +49,7 @@ const authCopy = {
   "sign-up": {
     title: "Create your account",
     subtitle: "Start your language journey today ✨",
-    email: "alex@gmail.com",
+    email: "",
     button: "Sign Up",
     footerText: "Already have an account?",
     footerAction: "Log in",
@@ -57,7 +59,7 @@ const authCopy = {
   "sign-in": {
     title: "Welcome back",
     subtitle: "Log in to continue your language journey ✨",
-    email: "alex@gmail.com",
+    email: "",
     button: "Sign In",
     footerText: "Don't have an account?",
     footerAction: "Sign up",
@@ -74,6 +76,18 @@ export function AuthScreen({ mode }: AuthScreenProps) {
   const [email, setEmail] = useState<string>(authCopy[mode].email);
   const copy = authCopy[mode];
 
+  // Clerk hooks for sign-in / sign-up flows
+  const {
+    isLoaded: isSignInLoaded,
+    signIn,
+    setActive: setActiveSignIn,
+  } = useSignIn();
+  const {
+    isLoaded: isSignUpLoaded,
+    signUp,
+    setActive: setActiveSignUp,
+  } = useSignUp();
+
   useEffect(() => {
     if (!isVerificationVisible) {
       return;
@@ -87,7 +101,79 @@ export function AuthScreen({ mode }: AuthScreenProps) {
   const openVerification = () => {
     Keyboard.dismiss();
     setVerificationCode("");
-    setVerificationVisible(true);
+
+    (async () => {
+      try {
+        // basic email validation
+        const isValidEmail = /^\S+@\S+\.\S+$/.test(email);
+        if (!isValidEmail) {
+          Alert.alert("Invalid email", "Please enter a valid email address.");
+          return;
+        }
+        if (mode === "sign-up") {
+          if (!isSignUpLoaded || !signUp) return setVerificationVisible(true);
+          // create a sign-up attempt and send an email code
+          const res: any = await signUp.create({ emailAddress: email });
+          if (res?.error) {
+            console.warn("signUp.create error", res.error);
+            Alert.alert(
+              "Sign up error",
+              res.error.longMessage ||
+                res.error.message ||
+                "Unable to create sign-up.",
+            );
+            return;
+          }
+          // send code via verification resource
+          const sendRes: any = await (
+            signUp as any
+          ).verifications.emailAddress.sendEmailCode();
+          if (sendRes?.error) {
+            console.warn("sendEmailCode error", sendRes.error);
+            Alert.alert(
+              "Email error",
+              sendRes.error.longMessage ||
+                sendRes.error.message ||
+                "Unable to send verification email.",
+            );
+            return;
+          }
+        } else {
+          if (!isSignInLoaded || !signIn) return setVerificationVisible(true);
+          // create a sign-in attempt and send an email code
+          const res: any = await signIn.create({ identifier: email });
+          if (res?.error) {
+            console.warn("signIn.create error", res.error);
+            Alert.alert(
+              "Sign in error",
+              res.error.longMessage ||
+                res.error.message ||
+                "Unable to create sign-in.",
+            );
+            return;
+          }
+          const sendRes: any = await (signIn as any).emailCode.sendCode();
+          if (sendRes?.error) {
+            console.warn("sendCode error", sendRes.error);
+            Alert.alert(
+              "Email error",
+              sendRes.error.longMessage ||
+                sendRes.error.message ||
+                "Unable to send verification email.",
+            );
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn("Clerk auth error", err);
+        Alert.alert(
+          "Auth error",
+          "An unexpected error occurred. Check console for details.",
+        );
+      } finally {
+        setVerificationVisible(true);
+      }
+    })();
   };
 
   const handleCodeChange = (value: string) => {
@@ -97,8 +183,36 @@ export function AuthScreen({ mode }: AuthScreenProps) {
 
     if (digits.length === 6) {
       Keyboard.dismiss();
-      setVerificationVisible(false);
-      router.replace("/");
+      (async () => {
+        try {
+          if (mode === "sign-up") {
+            if (isSignUpLoaded && signUp) {
+              await (signUp as any).verifications.emailAddress.verifyEmailCode({
+                code: digits,
+              });
+              if ((signUp as any).createdSessionId && setActiveSignUp) {
+                await setActiveSignUp({
+                  session: (signUp as any).createdSessionId,
+                });
+              }
+            }
+          } else {
+            if (isSignInLoaded && signIn) {
+              await (signIn as any).emailCode.verifyCode({ code: digits });
+              if ((signIn as any).createdSessionId && setActiveSignIn) {
+                await setActiveSignIn({
+                  session: (signIn as any).createdSessionId,
+                });
+              }
+            }
+          }
+        } catch (err) {
+          console.warn("Verification error", err);
+        } finally {
+          setVerificationVisible(false);
+          router.replace("/");
+        }
+      })();
     }
   };
 
@@ -165,7 +279,7 @@ export function AuthScreen({ mode }: AuthScreenProps) {
                       autoComplete="email"
                       keyboardType="email-address"
                       onChangeText={setEmail}
-                      placeholder="Email"
+                      placeholder="Email address"
                       placeholderTextColor={colors.neutral.textSecondary}
                       style={{
                         color: colors.neutral.textPrimary,
