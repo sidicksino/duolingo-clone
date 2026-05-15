@@ -16,63 +16,59 @@ export default function OnboardingScreen() {
           <View className="flex-row items-center justify-center">
             <Image
               accessibilityLabel="SinoLingo mascot logo"
-              className="h-[58px] w-[58px]"
+              className="onboarding__logo-image"
               resizeMode="contain"
               source={images.mascotLogo}
             />
-            <Text className="ml-3 font-poppins-bold text-[30px] leading-[38px] text-text-primary">
-              SinoLingo
-            </Text>
+            <Text className="onboarding__brand">SinoLingo</Text>
           </View>
         </View>
 
-        <View className="mt-[70px]">
-          <Text className="font-poppins-bold text-[36px] leading-[48px] text-text-primary">
+        <View className="onboarding__intro">
+          <Text className="onboarding__headline">
             Your AI language{"\n"}
-            <Text className="text-SinoLingo-deep-purple">teacher.</Text>
+            <Text className="onboarding__headline-accent">teacher.</Text>
           </Text>
-          <Text className="mt-5 font-poppins-regular text-[17px] leading-[30px] text-[#666E8B]">
+          <Text className="onboarding__body">
             Real conversations, personalized{"\n"}
             lessons, anytime, anywhere.
           </Text>
         </View>
 
         <View className="relative mt-6 flex-1">
-          <View className="absolute left-1 top-4 rotate-[-7deg] rounded-2xl bg-[#EFF8FF] px-6 py-3">
-            <Text className="font-poppins-medium text-[24px] leading-[32px] text-[#060A1F]">
+          <View className="onboarding__bubble onboarding__bubble--hello">
+            <Text className="onboarding__bubble-text onboarding__bubble-text--hello">
               Hello!
             </Text>
-            <View className="absolute bottom-[-9px] right-6 h-6 w-6 rotate-45 rounded-br-[5px] bg-[#EFF8FF]" />
+            <View className="onboarding__bubble-tail onboarding__bubble-tail--hello" />
           </View>
 
-          <View className="absolute right-1 top-0 rotate-[11deg] rounded-2xl bg-[#F5F4FF] px-6 py-3">
-            <Text className="font-poppins-medium text-[23px] leading-[31px] text-SinoLingo-deep-purple">
+          <View className="onboarding__bubble onboarding__bubble--hola">
+            <Text className="onboarding__bubble-text onboarding__bubble-text--hola">
               ¡Hola!
             </Text>
-            <View className="absolute bottom-[-9px] left-7 h-6 w-6 rotate-45 rounded-br-[5px] bg-[#F5F4FF]" />
+            <View className="onboarding__bubble-tail onboarding__bubble-tail--hola" />
           </View>
 
-          <View className="absolute right-0 top-[116px] rotate-[10deg] rounded-2xl bg-[#FFF5EF] px-6 py-3">
-            <Text className="font-poppins-medium text-[23px] leading-[31px] text-[#FF4D3D]">
+          <View className="onboarding__bubble onboarding__bubble--ni-hao">
+            <Text className="onboarding__bubble-text onboarding__bubble-text--ni-hao">
               你好!
             </Text>
-            <View className="absolute bottom-[-9px] left-7 h-6 w-6 rotate-45 rounded-br-[5px] bg-[#FFF5EF]" />
+            <View className="onboarding__bubble-tail onboarding__bubble-tail--ni-hao" />
           </View>
 
           <Image
             accessibilityLabel="SinoLingo mascot waving with a backpack"
-            className="absolute bottom-0 h-[390px] w-[390px] self-center"
+            className="onboarding__mascot"
             resizeMode="contain"
             source={images.mascotWelcome}
           />
         </View>
 
         <Link asChild href="/">
-          <Pressable className="mt-7 h-[74px] flex-row items-center justify-center rounded-[23px] bg-SinoLingo-deep-purple">
-            <Text className="font-poppins-semibold text-[20px] leading-[28px] text-white">
-              Get Started
-            </Text>
-            <View className="absolute right-7">
+          <Pressable className="onboarding__button">
+            <Text className="onboarding__button-label">Get Started</Text>
+            <View className="onboarding__button-icon">
               <Ionicons
                 color={colors.neutral.background}
                 name="chevron-forward"

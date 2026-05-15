@@ -156,4 +156,141 @@
     color: var(--color-text-secondary);
     text-transform: uppercase;
   }
+
+  .onboarding__logo-image {
+    width: 58px;
+    height: 58px;
+  }
+
+  .onboarding__brand {
+    margin-left: 12px;
+    font-family: var(--font-poppins-bold);
+    font-size: 30px;
+    line-height: 38px;
+    color: var(--color-text-primary);
+  }
+
+  .onboarding__intro {
+    margin-top: 70px;
+  }
+
+  .onboarding__headline {
+    font-family: var(--font-poppins-bold);
+    font-size: 36px;
+    line-height: 48px;
+    color: var(--color-text-primary);
+  }
+
+  .onboarding__headline-accent {
+    color: var(--color-SinoLingo-deep-purple);
+  }
+
+  .onboarding__body {
+    margin-top: 20px;
+    font-family: var(--font-poppins-regular);
+    font-size: 17px;
+    line-height: 30px;
+    color: #666e8b;
+  }
+
+  .onboarding__bubble {
+    position: absolute;
+    border-radius: 16px;
+    padding: 12px 24px;
+  }
+
+  .onboarding__bubble--hello {
+    top: 16px;
+    left: 4px;
+    background-color: #eff8ff;
+    transform: rotate(-7deg);
+  }
+
+  .onboarding__bubble--hola {
+    top: 0;
+    right: 4px;
+    background-color: #f5f4ff;
+    transform: rotate(11deg);
+  }
+
+  .onboarding__bubble--ni-hao {
+    top: 116px;
+    right: 0;
+    background-color: #fff5ef;
+    transform: rotate(10deg);
+  }
+
+  .onboarding__bubble-text {
+    font-family: var(--font-poppins-medium);
+    font-size: 23px;
+    line-height: 31px;
+  }
+
+  .onboarding__bubble-text--hello {
+    font-size: 24px;
+    line-height: 32px;
+    color: #060a1f;
+  }
+
+  .onboarding__bubble-text--hola {
+    color: var(--color-SinoLingo-deep-purple);
+  }
+
+  .onboarding__bubble-text--ni-hao {
+    color: #ff4d3d;
+  }
+
+  .onboarding__bubble-tail {
+    position: absolute;
+    bottom: -9px;
+    width: 24px;
+    height: 24px;
+    border-bottom-right-radius: 5px;
+    transform: rotate(45deg);
+  }
+
+  .onboarding__bubble-tail--hello {
+    right: 24px;
+    background-color: #eff8ff;
+  }
+
+  .onboarding__bubble-tail--hola {
+    left: 28px;
+    background-color: #f5f4ff;
+  }
+
+  .onboarding__bubble-tail--ni-hao {
+    left: 28px;
+    background-color: #fff5ef;
+  }
+
+  .onboarding__mascot {
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+    width: 390px;
+    height: 390px;
+  }
+
+  .onboarding__button {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 74px;
+    margin-top: 28px;
+    border-radius: 23px;
+    background-color: var(--color-SinoLingo-deep-purple);
+  }
+
+  .onboarding__button-label {
+    font-family: var(--font-poppins-semibold);
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--color-background);
+  }
+
+  .onboarding__button-icon {
+    position: absolute;
+    right: 28px;
+  }
 }

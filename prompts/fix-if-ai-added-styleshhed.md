@@ -1,1 +1,6 @@
-The agents.md file only specifies to use the stylesheet for components where Tailwind CSS or native Wint class names don't work natively, which is the case for the safe area of view, but not for text, images, and all of the other components. For those still use the class name native wind syntax. Fix the onboarding screen to do it properly.
+The agents.md file specifies using a stylesheet only for components where Tailwind/native NativeWind class names do not work (for example, SafeAreaView). For text, images, and other components, use NativeWind `className` syntax. Fix the onboarding screen accordingly.
+
+## VS code warning:
+
+VS Code warnings (yellow highlights) or errors.
+Check and fix errors
