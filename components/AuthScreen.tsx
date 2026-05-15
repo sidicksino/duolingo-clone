@@ -157,39 +157,37 @@ export function AuthScreen({ mode }: AuthScreenProps) {
             />
           </View>
 
-          {isSignUp ? (
-            <View className="auth__input-shell auth__input-shell--password">
-              <Text className="auth__input-label">Password</Text>
-              <View className="auth__password-row">
-                <TextInput
-                  placeholder="Password"
-                  placeholderTextColor={colors.neutral.textSecondary}
-                  onChangeText={setPassword}
-                  secureTextEntry={!passwordVisible}
-                  style={{
-                    color: colors.neutral.textPrimary,
-                    fontFamily: "Poppins-Regular",
-                    fontSize: 20,
-                    lineHeight: 28,
-                    margin: 0,
-                    padding: 0,
-                    flex: 1,
-                  }}
-                  value={password}
+          <View className="auth__input-shell auth__input-shell--password">
+            <Text className="auth__input-label">Password</Text>
+            <View className="auth__password-row">
+              <TextInput
+                placeholder="Password"
+                placeholderTextColor={colors.neutral.textSecondary}
+                onChangeText={setPassword}
+                secureTextEntry={!passwordVisible}
+                style={{
+                  color: colors.neutral.textPrimary,
+                  fontFamily: "Poppins-Regular",
+                  fontSize: 20,
+                  lineHeight: 28,
+                  margin: 0,
+                  padding: 0,
+                  flex: 1,
+                }}
+                value={password}
+              />
+              <Pressable
+                onPress={() => setPasswordVisible(!passwordVisible)}
+                hitSlop={12}
+              >
+                <Ionicons
+                  color="#747D9B"
+                  name={passwordVisible ? "eye-outline" : "eye-off-outline"}
+                  size={31}
                 />
-                <Pressable
-                  onPress={() => setPasswordVisible(!passwordVisible)}
-                  hitSlop={12}
-                >
-                  <Ionicons
-                    color="#747D9B"
-                    name={passwordVisible ? "eye-outline" : "eye-off-outline"}
-                    size={31}
-                  />
-                </Pressable>
-              </View>
+              </Pressable>
             </View>
-          ) : null}
+          </View>
 
           <Pressable
             className="auth__primary-button"
